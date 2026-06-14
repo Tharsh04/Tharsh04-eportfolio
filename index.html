@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharssan A/L Karunamoorthy - Academic e-Portfolio</title>
+    <style>
+        :root {
+            --primary: #EA580C;
+            --primary-dark: #C2410C;
+            --secondary: #10B981;
+            --bg-light: #FFF8F6;
+            --surface: #FFFFFF;
+            --text-main: #231917;
+            --text-muted: #6F797A;
+            --border: #E4E9EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Sticky Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .badge-sdg {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .meta-grid strong {
+            color: var(--text-main);
+        }
+
+        /* Layout Grid Sections */
+        section {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            scroll-margin-top: 5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Components: Video Cards */
+        .card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.01);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .reflection-box {
+            background-color: #FFF7ED;
+            border-left: 3px solid var(--primary);
+            padding: 0.75rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            font-style: italic;
+            margin-top: auto;
+        }
+
+        /* Buttons & Badges */
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #24292E;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-github:hover {
+            background-color: #000000;
+        }
+
+        /* Skills Layout */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-badge {
+            background-color: #EFF4F7;
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        /* Blockquotes */
+        blockquote {
+            background-color: var(--surface);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 1.05rem;
+            color: #3F484A;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            border-left-width: 4px;
+        }
+
+        footer {
+            background-color: var(--surface);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 6rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            section {
+                margin: 3rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">TF // Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#labs">Labs</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#reflection">Reflection</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="profile">
+        <div class="header-container">
+            <div class="badge-sdg">SDG 2: Zero Hunger</div>
+            <h1>Tharssan A/L Karunamoorthy</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin-top: 0.5rem;">
+                As an undergraduate software engineering student at Universiti Kebangsaan Malaysia, my academic focus centers on architecture pipelines, reactive UI designs, and local-to-cloud transactional security layers.
+            </p>
+            <div class="meta-grid">
+                <div><strong>Matric No:</strong> a221007</div>
+                <div><strong>Programme:</strong> Software Engineering (FTSM)</div>
+                <div><strong>Course Code:</strong> TK2323 / TM2213</div>
+                <div><strong>Instructor:</strong> Dr. Nelson</div>
+            </div>
+        </div>
+    </header>
+
+    <section id="labs">
+        <h2>Laboratory Implementations</h2>
+        <div class="card-grid">
+            
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/rqlZBcIoE5M" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Lab 1: UI Foundations</div>
+                    <div class="card-desc">Constructing responsive interface structures using Jetpack Compose layout engines including Box, Column, and Row containers.</div>
+                    <div class="reflection-box">
+                        Developed a solid grasp of declarative UI programming. Overcoming nesting alignment challenges helped me write code that naturally scales across phone types.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2XuSuh1He98" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Lab 2: Dynamic Interaction</div>
+                    <div class="card-desc">Managing view state parameters using runtime memory markers like remember variables and mutable state delegates.</div>
+                    <div class="reflection-box">
+                        Learning mutable state mechanics cleared up how Compose triggers recomposition. Managing state changes smoothly prevented UI stuttering during runtime inputs.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/nL_zOJ0_PvA" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Lab 3: Material Design 3</div>
+                    <div class="card-desc">Applying unified component templates, dark/light theme properties, and accessible text styling from the Material Design 3 system.</div>
+                    <div class="reflection-box">
+                        Using unified Material tokens made it simple to keep styling consistent across screens while maintaining high contrast for easier reading.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/J3cDNYUpqDc" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Lab 4: Navigation Architecture</div>
+                    <div class="card-desc">Setting up multi-screen route controllers, passing arguments across paths, and configuring safe back-stack operations.</div>
+                    <div class="reflection-box">
+                        Structuring decoupled graph routes made expanding the application straightforward without breaking existing screen relationships.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DVEJ2zGThXE" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Lab 5: Room Data Layer</div>
+                    <div class="card-desc">Building local databases with the Room persistence engine, writing secure DAOs, and managing asynchronous data streams.</div>
+                    <div class="reflection-box">
+                        Writing structured queries highlighted the benefit of having an offline cache layer. It handles user inputs instantly, even without an active internet connection.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Capstone Research Projects</h2>
+        
+        <div class="card" style="margin-bottom: 3rem;">
+            <div class="video-container" style="padding-top: 45%;">
+                <iframe src="https://www.youtube.com/embed/YX8hs88HsBg" allowfullscreen></iframe>
+            </div>
+            <div class="card-content" style="padding: 2rem;">
+                <div class="card-title" style="font-size: 1.5rem;">Project 1 Capstone: FeedForward Beta</div>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-weight: 500;">
+                    <strong>Problem Statement:</strong> Fragmented donation coordination leaves local centers struggling with unpredictable supply mismatches, making it difficult to distribute resources fairly to B40 households.
+                </p>
+                <a href="https://github.com/Tharsh04/A221007_Tharssan_DrNelson_Project1.git" target="_blank" class="btn-github">
+                    View Project 1 Code Repository on GitHub &rarr;
+                </a>
+                <div class="reflection-box">
+                    <strong>Lessons Learned:</strong> Building a multi-screen platform using a unified shared ViewModel kept the app structure organized and clean. Separating the UI layouts from the underlying data models made managing state changes much easier.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container" style="padding-top: 45%;">
+                <iframe src="https://www.youtube.com/embed/_ngfikhQnLE" allowfullscreen></iframe>
+            </div>
+            <div class="card-content" style="padding: 2rem;">
+                <div class="card-title" style="font-size: 1.5rem;">Project 2 Capstone: FeedForward Pro (Advanced Connected Systems)</div>
+                <p style="color: var(--text-muted); margin-bottom: 1rem; font-weight: 500;">
+                    <strong>Problem Statement:</strong> Without a live coordination layer, donation tracking suffers from delayed reporting, inventory bottlenecks, and lack of location awareness for nearby community supply centers.
+                </p>
+                <a href="https://github.com/Tharsh04/A221007_Tharssan_DrNelson_Project2.git" target="_blank" class="btn-github">
+                    View Project 2 Code Repository on GitHub &rarr;
+                </a>
+                <div class="reflection-box">
+                    <strong>Lessons Learned:</strong> Setting up real-time sync between Room and Firestore kept the local and cloud data aligned perfectly. Combining device location sensors with public web APIs like Overpass showed me how to handle hardware inputs and asynchronous data safely on the main thread.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reflection">
+        <h2>Course Reflection & Learning Journey</h2>
+        <blockquote>
+            Moving from standard layouts in Lab 1 to advanced asynchronous pipelines in Project 2 has reshaped how I think about mobile engineering. Balancing offline reliability via Room while managing real-time cloud data streams in Firestore highlighted the need for clean architecture patterns. Working on practical solutions for SDG 2: Zero Hunger showed me firsthand how thoughtful design decisions can build real, dependable tools that solve real-world problems.
+        </blockquote>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Expertise & Skill Stack</h2>
+        <div class="skills-container">
+            <div class="skill-badge">Kotlin Development</div>
+            <div class="skill-badge">Jetpack Compose UI declarative programming</div>
+            <div class="skill-badge">Room Database Engine</div>
+            <div class="skill-badge">Retrofit HTTP Web Clients</div>
+            <div class="skill-badge">Firebase Firestore Architecture</div>
+            <div class="skill-badge">Google Fused Location Sensor Client APIs</div>
+            <div class="skill-badge">Asynchronous Coroutines & State Flow Pipelines</div>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 0; padding-bottom: 0;">
+        <h2>Acknowledge Block</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+            Built utilizing the OpenStreetMap Overpass Web Infrastructure, Nominatim Geocoding Services, and the Firebase Database Engine framework platforms. Implementation assistance supported via generative model optimization analysis tracking reviews.
+        </p>
+    </section>
+
+    <footer>
+        <p>Tharssan A/L Karunamoorthy // Matric: a221007 // Universiti Kebangsaan Malaysia // 2026</p>
+    </footer>
+
+</body>
+</html>
