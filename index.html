@@ -205,6 +205,77 @@
             font-size: 0.88rem;
             font-style: italic;
             margin-top: auto;
+            margin-bottom: 1rem;
+        }
+
+        /* Interface Toggle Folder Styles */
+        .interface-folder {
+            margin-top: 1rem;
+            border-top: 1px dashed var(--border);
+            padding-top: 1rem;
+        }
+
+        .btn-toggle-screens {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #FFF7ED;
+            color: var(--primary);
+            border: 1px solid #FFEDD5;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-toggle-screens:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .screens-gallery {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+            background-color: #FAFAFA;
+            padding: 0.75rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .screens-gallery.active {
+            display: grid;
+        }
+
+        .screen-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .screen-item img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .screen-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .screen-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 0.35rem;
         }
 
         /* Buttons & Badges */
@@ -326,6 +397,18 @@
                     <div class="reflection-box">
                         Developed a solid grasp of declarative UI programming. Overcoming nesting alignment challenges helped me write code that naturally scales across phone types.
                     </div>
+                    
+                    <div class="interface-folder">
+                        <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab1')">
+                            📁 View Screen Interfaces (1)
+                        </button>
+                        <div id="gallery-lab1" class="screens-gallery">
+                            <div class="screen-item">
+                                <img src="lab_1_ss.png" alt="Lab 1 Screen">
+                                <div class="screen-label">lab_1_ss</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -338,6 +421,22 @@
                     <div class="card-desc">Managing view state parameters using runtime memory markers like remember variables and mutable state delegates.</div>
                     <div class="reflection-box">
                         Learning mutable state mechanics cleared up how Compose triggers recomposition. Managing state changes smoothly prevented UI stuttering during runtime inputs.
+                    </div>
+                    
+                    <div class="interface-folder">
+                        <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab2')">
+                            📁 View Screen Interfaces (2)
+                        </button>
+                        <div id="gallery-lab2" class="screens-gallery">
+                            <div class="screen-item">
+                                <img src="lab_2_1.jpg" alt="Lab 2 Screen 1">
+                                <div class="screen-label">lab_2_1</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_2_2.jpg" alt="Lab 2 Screen 2">
+                                <div class="screen-label">lab_2_2</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,6 +451,26 @@
                     <div class="reflection-box">
                         Using unified Material tokens made it simple to keep styling consistent across screens while maintaining high contrast for easier reading.
                     </div>
+                    
+                    <div class="interface-folder">
+                        <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab3')">
+                            📁 View Screen Interfaces (3)
+                        </button>
+                        <div id="gallery-lab3" class="screens-gallery">
+                            <div class="screen-item">
+                                <img src="lab_3_1.jpg" alt="Lab 3 Screen 1">
+                                <div class="screen-label">lab_3_1</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_3_2.jpg" alt="Lab 3 Screen 2">
+                                <div class="screen-label">lab_3_2</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_3_3.jpg" alt="Lab 3 Screen 3">
+                                <div class="screen-label">lab_3_3</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -365,6 +484,46 @@
                     <div class="reflection-box">
                         Structuring decoupled graph routes made expanding the application straightforward without breaking existing screen relationships.
                     </div>
+                    
+                    <div class="interface-folder">
+                        <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab4')">
+                            📁 View Screen Interfaces (8)
+                        </button>
+                        <div id="gallery-lab4" class="screens-gallery" style="grid-template-columns: repeat(4, 1fr);">
+                            <div class="screen-item">
+                                <img src="lab_4_1.jpg" alt="Lab 4 Screen 1">
+                                <div class="screen-label">lab_4_1</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_2.jpg" alt="Lab 4 Screen 2">
+                                <div class="screen-label">lab_4_2</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_3.jpg" alt="Lab 4 Screen 3">
+                                <div class="screen-label">lab_4_3</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_4.jpg" alt="Lab 4 Screen 4">
+                                <div class="screen-label">lab_4_4</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_5.jpg" alt="Lab 4 Screen 5">
+                                <div class="screen-label">lab_4_5</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_6.jpg" alt="Lab 4 Screen 6">
+                                <div class="screen-label">lab_4_6</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_7.jpg" alt="Lab 4 Screen 7">
+                                <div class="screen-label">lab_4_7</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_4_8.jpg" alt="Lab 4 Screen 8">
+                                <div class="screen-label">lab_4_8</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -377,6 +536,34 @@
                     <div class="card-desc">Building local databases with the Room persistence engine, writing secure DAOs, and managing asynchronous data streams.</div>
                     <div class="reflection-box">
                         Writing structured queries highlighted the benefit of having an offline cache layer. It handles user inputs instantly, even without an active internet connection.
+                    </div>
+                    
+                    <div class="interface-folder">
+                        <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab5')">
+                            📁 View Screen Interfaces (5)
+                        </button>
+                        <div id="gallery-lab5" class="screens-gallery" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="screen-item">
+                                <img src="lab_5_1.jpg" alt="Lab 5 Screen 1">
+                                <div class="screen-label">lab_5_1</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_5_2.jpg" alt="Lab 5 Screen 2">
+                                <div class="screen-label">lab_5_2</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_5_3.jpg" alt="Lab 5 Screen 3">
+                                <div class="screen-label">lab_5_3</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_5_4.jpg" alt="Lab 5 Screen 4">
+                                <div class="screen-label">lab_5_4</div>
+                            </div>
+                            <div class="screen-item">
+                                <img src="lab_5_5.jpg" alt="Lab 5 Screen 5">
+                                <div class="screen-label">lab_5_5</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -454,6 +641,21 @@
     <footer>
         <p>Tharssan A/L Karunamoorthy // Matric: a221007 // Universiti Kebangsaan Malaysia // 2026</p>
     </footer>
+
+    <script>
+        function toggleGallery(galleryId) {
+            const gallery = document.getElementById(galleryId);
+            gallery.classList.toggle('active');
+            
+            const btn = gallery.previousElementSibling;
+            if (gallery.classList.contains('active')) {
+                btn.innerHTML = '📂 Hide Screen Interfaces';
+            } else {
+                const count = gallery.children.length;
+                btn.innerHTML = `📁 View Screen Interfaces (${count})`;
+            }
+        }
+    </script>
 
 </body>
 </html>
