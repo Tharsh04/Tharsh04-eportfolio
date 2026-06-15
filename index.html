@@ -261,10 +261,13 @@
 
         .screen-item img {
             width: 100%;
+            max-height: 220px;
+            object-fit: contain;
             border-radius: 4px;
             border: 1px solid var(--border);
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             transition: transform 0.2s;
+            background-color: #fff;
         }
 
         .screen-item img:hover {
@@ -387,6 +390,7 @@
         <h2>Laboratory Implementations</h2>
         <div class="card-grid">
             
+            <!-- LAB 1 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/rqlZBcIoE5M" allowfullscreen></iframe>
@@ -398,13 +402,15 @@
                         Developed a solid grasp of declarative UI programming. Overcoming nesting alignment challenges helped me write code that naturally scales across phone types.
                     </div>
                     
+                    <!-- Screen Interfaces Folder Toggle -->
                     <div class="interface-folder">
                         <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab1')">
                             📁 View Screen Interfaces (1)
                         </button>
                         <div id="gallery-lab1" class="screens-gallery">
                             <div class="screen-item">
-                                <img src="lab_1_ss.png" alt="Lab 1 Screen">
+                                <!-- Checks .jpg, then .jpg uppercase, then fallback .png -->
+                                <img src="lab_1_ss.jpg" onerror="this.onerror=function(){this.src='lab_1_ss.png'};this.src='lab_1_ss.jpg';" alt="Lab 1 Screen">
                                 <div class="screen-label">lab_1_ss</div>
                             </div>
                         </div>
@@ -412,6 +418,7 @@
                 </div>
             </div>
 
+            <!-- LAB 2 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/2XuSuh1He98" allowfullscreen></iframe>
@@ -423,17 +430,18 @@
                         Learning mutable state mechanics cleared up how Compose triggers recomposition. Managing state changes smoothly prevented UI stuttering during runtime inputs.
                     </div>
                     
+                    <!-- Screen Interfaces Folder Toggle -->
                     <div class="interface-folder">
                         <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab2')">
                             📁 View Screen Interfaces (2)
                         </button>
                         <div id="gallery-lab2" class="screens-gallery">
                             <div class="screen-item">
-                                <img src="lab_2_1.jpg" alt="Lab 2 Screen 1">
+                                <img src="lab_2_1.jpg" onerror="this.src='lab_2_1.JPG'" alt="Lab 2 Screen 1">
                                 <div class="screen-label">lab_2_1</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_2_2.jpg" alt="Lab 2 Screen 2">
+                                <img src="lab_2_2.jpg" onerror="this.src='lab_2_2.JPG'" alt="Lab 2 Screen 2">
                                 <div class="screen-label">lab_2_2</div>
                             </div>
                         </div>
@@ -441,6 +449,7 @@
                 </div>
             </div>
 
+            <!-- LAB 3 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/nL_zOJ0_PvA" allowfullscreen></iframe>
@@ -452,21 +461,22 @@
                         Using unified Material tokens made it simple to keep styling consistent across screens while maintaining high contrast for easier reading.
                     </div>
                     
+                    <!-- Screen Interfaces Folder Toggle -->
                     <div class="interface-folder">
                         <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab3')">
                             📁 View Screen Interfaces (3)
                         </button>
                         <div id="gallery-lab3" class="screens-gallery">
                             <div class="screen-item">
-                                <img src="lab_3_1.jpg" alt="Lab 3 Screen 1">
+                                <img src="lab_3_1.jpg" onerror="this.src='lab_3_1.JPG'" alt="Lab 3 Screen 1">
                                 <div class="screen-label">lab_3_1</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_3_2.jpg" alt="Lab 3 Screen 2">
+                                <img src="lab_3_2.jpg" onerror="this.src='lab_3_2.JPG'" alt="Lab 3 Screen 2">
                                 <div class="screen-label">lab_3_2</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_3_3.jpg" alt="Lab 3 Screen 3">
+                                <img src="lab_3_3.jpg" onerror="this.src='lab_3_3.JPG'" alt="Lab 3 Screen 3">
                                 <div class="screen-label">lab_3_3</div>
                             </div>
                         </div>
@@ -474,6 +484,7 @@
                 </div>
             </div>
 
+            <!-- LAB 4 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/J3cDNYUpqDc" allowfullscreen></iframe>
@@ -485,41 +496,42 @@
                         Structuring decoupled graph routes made expanding the application straightforward without breaking existing screen relationships.
                     </div>
                     
+                    <!-- Screen Interfaces Folder Toggle -->
                     <div class="interface-folder">
                         <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab4')">
                             📁 View Screen Interfaces (8)
                         </button>
                         <div id="gallery-lab4" class="screens-gallery" style="grid-template-columns: repeat(4, 1fr);">
                             <div class="screen-item">
-                                <img src="lab_4_1.jpg" alt="Lab 4 Screen 1">
+                                <img src="lab_4_1.jpg" onerror="this.src='lab_4_1.JPG'" alt="Lab 4 Screen 1">
                                 <div class="screen-label">lab_4_1</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_2.jpg" alt="Lab 4 Screen 2">
+                                <img src="lab_4_2.jpg" onerror="this.src='lab_4_2.JPG'" alt="Lab 4 Screen 2">
                                 <div class="screen-label">lab_4_2</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_3.jpg" alt="Lab 4 Screen 3">
+                                <img src="lab_4_3.jpg" onerror="this.src='lab_4_3.JPG'" alt="Lab 4 Screen 3">
                                 <div class="screen-label">lab_4_3</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_4.jpg" alt="Lab 4 Screen 4">
+                                <img src="lab_4_4.jpg" onerror="this.src='lab_4_4.JPG'" alt="Lab 4 Screen 4">
                                 <div class="screen-label">lab_4_4</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_5.jpg" alt="Lab 4 Screen 5">
+                                <img src="lab_4_5.jpg" onerror="this.src='lab_4_5.JPG'" alt="Lab 4 Screen 5">
                                 <div class="screen-label">lab_4_5</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_6.jpg" alt="Lab 4 Screen 6">
+                                <img src="lab_4_6.jpg" onerror="this.src='lab_4_6.JPG'" alt="Lab 4 Screen 6">
                                 <div class="screen-label">lab_4_6</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_7.jpg" alt="Lab 4 Screen 7">
+                                <img src="lab_4_7.jpg" onerror="this.src='lab_4_7.JPG'" alt="Lab 4 Screen 7">
                                 <div class="screen-label">lab_4_7</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_4_8.jpg" alt="Lab 4 Screen 8">
+                                <img src="lab_4_8.jpg" onerror="this.src='lab_4_8.JPG'" alt="Lab 4 Screen 8">
                                 <div class="screen-label">lab_4_8</div>
                             </div>
                         </div>
@@ -527,6 +539,7 @@
                 </div>
             </div>
 
+            <!-- LAB 5 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/DVEJ2zGThXE" allowfullscreen></iframe>
@@ -538,29 +551,30 @@
                         Writing structured queries highlighted the benefit of having an offline cache layer. It handles user inputs instantly, even without an active internet connection.
                     </div>
                     
+                    <!-- Screen Interfaces Folder Toggle -->
                     <div class="interface-folder">
                         <button class="btn-toggle-screens" onclick="toggleGallery('gallery-lab5')">
                             📁 View Screen Interfaces (5)
                         </button>
                         <div id="gallery-lab5" class="screens-gallery" style="grid-template-columns: repeat(3, 1fr);">
                             <div class="screen-item">
-                                <img src="lab_5_1.jpg" alt="Lab 5 Screen 1">
+                                <img src="lab_5_1.jpg" onerror="this.src='lab_5_1.JPG'" alt="Lab 5 Screen 1">
                                 <div class="screen-label">lab_5_1</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_5_2.jpg" alt="Lab 5 Screen 2">
+                                <img src="lab_5_2.jpg" onerror="this.src='lab_5_2.JPG'" alt="Lab 5 Screen 2">
                                 <div class="screen-label">lab_5_2</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_5_3.jpg" alt="Lab 5 Screen 3">
+                                <img src="lab_5_3.jpg" onerror="this.src='lab_5_3.JPG'" alt="Lab 5 Screen 3">
                                 <div class="screen-label">lab_5_3</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_5_4.jpg" alt="Lab 5 Screen 4">
+                                <img src="lab_5_4.jpg" onerror="this.src='lab_5_4.JPG'" alt="Lab 5 Screen 4">
                                 <div class="screen-label">lab_5_4</div>
                             </div>
                             <div class="screen-item">
-                                <img src="lab_5_5.jpg" alt="Lab 5 Screen 5">
+                                <img src="lab_5_5.jpg" onerror="this.src='lab_5_5.JPG'" alt="Lab 5 Screen 5">
                                 <div class="screen-label">lab_5_5</div>
                             </div>
                         </div>
@@ -642,6 +656,7 @@
         <p>Tharssan A/L Karunamoorthy // Matric: a221007 // Universiti Kebangsaan Malaysia // 2026</p>
     </footer>
 
+    <!-- Toggle Action Script -->
     <script>
         function toggleGallery(galleryId) {
             const gallery = document.getElementById(galleryId);
